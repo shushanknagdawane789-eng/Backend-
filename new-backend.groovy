@@ -1,17 +1,17 @@
 pipeline {
     agent any
     environment {
-        DOCKER_REPO = "flight-backend"
-        DOCKER_USER  = "mayurwagh"
-        CLUSTER_NAME = "cbz-cluster"
-        REGION = "eu-north-1"
+        DOCKER_REPO = "Backend"
+        DOCKER_USER  = "shushankbittu"
+        CLUSTER_NAME = "swiggy"
+        REGION = "ap-southeast-2"
 
     }
     stages {
         stage('Code-checkout'){
             steps{
                 git branch: 'main',
-                    url: 'https://github.com/mayurmwagh/flight-reservation-backend.git'
+                    url: 'https://github.com/shushanknagdawane789-eng/Backend-.git'
             }
         }
         stage('Code-build'){
@@ -60,7 +60,7 @@ pipeline {
                 steps {
           
                     sh '''
-                     sed -i "s|mayurwagh/node-app:latest|${DOCKER_USER}/${DOCKER_REPO}:${BUILD_NUMBER}|g" k8s/deployment.yaml
+                     sed -i "s|shushankbittu/backend:latest|${DOCKER_USER}/${DOCKER_REPO}:${BUILD_NUMBER}|g" k8s/deployment.yaml
                     '''
                     sh 'cat k8s/deployment.yaml'
                 }
