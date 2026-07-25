@@ -14,9 +14,9 @@
     </parent>
 
     <groupId>com.shivam.flightreservationapp</groupId>
-    <artifactId>flightreservationApplication</artifactId>
+    <artifactId>flight-reservation-application</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>FlightReservationApplication</name>
+    <name>flight-reservation-application</name>
     <description>Flight Reservation Application</description>
 
     <properties>
