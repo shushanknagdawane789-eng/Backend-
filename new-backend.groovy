@@ -1,12 +1,11 @@
 pipeline {
     agent any
     environment {
-        DOCKER_REPO = "Backend"
-        DOCKER_USER  = "shushankbittu"
-        CLUSTER_NAME = "swiggy"
-        REGION = "ap-southeast-2"
-
-    }
+    DOCKER_REPO = "backend"
+    DOCKER_USER = "shushankbittu"
+    CLUSTER_NAME = "swiggy"
+    REGION = "ap-southeast-2"
+}
     stages {
         stage('Code-checkout'){
             steps{
@@ -60,8 +59,8 @@ pipeline {
                 steps {
           
                     sh '''
-                     sed -i "s|shushankbittu/backend:latest|${DOCKER_USER}/${DOCKER_REPO}:${BUILD_NUMBER}|g" k8s/deployment.yaml
-                    '''
+sed -i "s|shushankbittu/backend:latest|${DOCKER_USER}/${DOCKER_REPO}:${BUILD_NUMBER}|g" k8s/deployment.yaml
+'''
                     sh 'cat k8s/deployment.yaml'
                 }
             }
