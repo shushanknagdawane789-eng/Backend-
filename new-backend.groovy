@@ -3,7 +3,7 @@ pipeline {
     environment {
     DOCKER_REPO = "backend"
     DOCKER_USER = "shushankbittu"
-    CLUSTER_NAME = "swiggy"
+    CLUSTER_NAME = "meesho"
     REGION = "ap-southeast-2"
 }
     stages {
@@ -69,7 +69,9 @@ sed -i "s|shushankbittu/backend:latest|${DOCKER_USER}/${DOCKER_REPO}:${BUILD_NUM
                 withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws_creds', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
 
                     sh ''' 
-                            aws eks update-kubeconfig --name ${CLUSTER_NAME} --region ${REGION}
+                             aws eks update-kubeconfig \
+  --name meesho \
+  --region ap-southeast-2
                             kubectl get nodes
                             kubectl apply -f k8s/deployment.yaml
                             kubectl apply -f k8s/service.yaml
