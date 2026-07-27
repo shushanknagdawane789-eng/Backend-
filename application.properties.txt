@@ -1,8 +1,8 @@
 spring.application.name=FlightReservationApplication
 
-spring.datasource.url=jdbc:mysql://terraform-20260724101114677200000007.cpsu0iuuets1.ap-southeast-2.rds.amazonaws.com:3306/flightdb?createDatabaseIfNotExist=true
+spring.datasource.url=jdbc:mysql://flightdb.cpwksc2e22d2.ap-southeast-2.rds.amazonaws.com:3306/flightdb
 spring.datasource.username=admin
-spring.datasource.password=Redhat123
+spring.datasource.password=shushank123#
 frontend.url=http://3.93.154.213:80
 
 # Hibernate properties for MySQL
