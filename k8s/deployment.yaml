@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flight-reservation-app
-        image: shushankbittu/backend:latest
+        image: shushankbittu/backend:17
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
