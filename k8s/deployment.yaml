@@ -19,7 +19,7 @@ spec:
         image: shushankbittu/backend:17
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 8081
         resources:
           requests:
             memory: "512Mi"
